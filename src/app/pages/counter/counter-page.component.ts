@@ -1,5 +1,5 @@
 
-import { Component, provideZoneChangeDetection, signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, provideZoneChangeDetection, signal } from '@angular/core';
 
 @Component({
   //template: `
@@ -15,7 +15,8 @@ import { Component, provideZoneChangeDetection, signal } from '@angular/core';
         width: 75px;
       }
     `
-  ]
+  ],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class CounterPageComponent{
 
