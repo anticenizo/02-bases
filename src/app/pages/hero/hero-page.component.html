@@ -1,18 +1,18 @@
 
-<h1>Nombre: {{ nameSignal() }}</h1>
+<h1>Nombre: {{ name() }}</h1>
 
 <dl>
   <td>Nombre:</td>
-  <dd>{{ nameSignal() }}</dd>
+  <dd>{{ name() }}</dd>
 
   <td>Edad:</td>
-  <dd>{{ ageSignal() }}</dd>
+  <dd>{{ age() }}</dd>
 
   <td>Método:</td>
-  <dd>{{ getHeroDescription(nameSignal, ageSignal) }}</dd>
+  <dd>{{ getHeroDescription() }}</dd>
 
   <td>Capitalizado:</td>
-  <dd>{{ nameSignal() | uppercase }}</dd>
+  <dd>{{ name().toUpperCase() }}</dd>
   <!-- <dd> {{ 'Mostrar nombre TODO EN MAYÚSCULAS' }} </dd> -->
 </dl>
 
