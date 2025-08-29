@@ -27,24 +27,5 @@ export class DragonballSuperPageComponent {
     { id: 2, name: 'Vegeta', power: 8000},
   ]);
 
-  /*addCharacter(): void {
-    if( !this.name() || !this.power() || this.power() <= 0 ){
-      return;
-    }
-
-    const newCharacter: Character = {
-      id: this.characters().length + 1,
-      name: this.name(),
-      power: this.power()
-    };
-
-    this.characters.update( currentCharacters => [ ...currentCharacters, newCharacter] );
-    this.resetFields();
-  }*/
-
-  /*resetFields(): void {
-    this.name.set('');
-    this.power.set(0);
-  }*/
 
 }
