@@ -1,6 +1,6 @@
 
 
-<h1>DragonBall Page</h1>
+<h1>DragonBall Page Super</h1>
 <hr>
 
 
@@ -37,28 +37,13 @@
   </div>
 
   <div class="col-12 col-sm-6">
-    <h3>Listado</h3>
-    <ul>
 
-      @for (character of characters(); track character.id; let idx = $index) {
-        @if(character.power > 500) {
-          <li>
-          <span> {{ idx + 1 }} - {{ character.name }} </span>
-          <strong
-            [class.text-danger]="character.power > 9000"
-            [class.text-info]="character.power < 9000">
-<!--    [ngClass]="powerClasses()"        > -->
-            ({{ character.power }})
-          </strong>
-        </li>
-        }@else {
-          <li>
-            <strong>Aquí no hay nadie</strong>
-          </li>
-        }
-      }
+    <dragonball-character-list
+      listName="Listado de personajes"
+      [characters]="characters()"
+    />
 
-    </ul>
+
   </div>
 
 </section>
