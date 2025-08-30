@@ -11,10 +11,6 @@ export class CharacterAddComponent{
   name = signal('');
   power = signal(0);
   newCharacter = output<Character>();
-  /*characters = signal<Character[]>([
-    { id: 1, name: 'Goku', power: 9001},
-    { id: 2, name: 'Vegeta', power: 8000},
-  ]);*/
 
   addCharacter(): void {
     if( !this.name() || !this.power() || this.power() <= 0 ){
