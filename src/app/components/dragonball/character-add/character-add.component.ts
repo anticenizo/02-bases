@@ -1,4 +1,4 @@
-import { Component, signal } from "@angular/core";
+import { Component, signal, output } from "@angular/core";
 import type { Character } from '../../../interfaces/character.interface';
 
 
@@ -10,10 +10,11 @@ import type { Character } from '../../../interfaces/character.interface';
 export class CharacterAddComponent{
   name = signal('');
   power = signal(0);
-  characters = signal<Character[]>([
+  newCharacter = output<Character>();
+  /*characters = signal<Character[]>([
     { id: 1, name: 'Goku', power: 9001},
     { id: 2, name: 'Vegeta', power: 8000},
-  ]);
+  ]);*/
 
   addCharacter(): void {
     if( !this.name() || !this.power() || this.power() <= 0 ){
@@ -21,13 +22,13 @@ export class CharacterAddComponent{
     }
 
     const newCharacter: Character = {
-      id: this.characters().length + 1,
+      id: Math.floor( Math.random() * 10000 ),
       name: this.name(),
       power: this.power()
     };
 
-    this.characters.update( currentCharacters => [ ...currentCharacters, newCharacter] );
-    console.log(this.characters());
+    //this.characters.update( currentCharacters => [ ...currentCharacters, newCharacter] );
+    this.newCharacter.emit( newCharacter );
     this.resetFields();
   }
 

@@ -1,13 +1,11 @@
 import { Component, computed, signal } from "@angular/core";
 import { NgClass } from "@angular/common";
 
-
 interface Character {
   id: number
   name: string;
   power: number;
 }
-
 
 @Component({  selector: 'app-dragonball-page',
 
@@ -41,17 +39,9 @@ export class DragonballPageComponent {
     this.resetFields();
   }
 
-
   resetFields(): void {
     this.name.set('');
     this.power.set(0);
   }
 
-
-    // powerClasses = computed(() => {
-    //   return {
-    //       'text-danger': true
-    //   }
-    // })
-
-  }
+}
